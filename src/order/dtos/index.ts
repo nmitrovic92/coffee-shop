@@ -7,12 +7,12 @@ enum ETypeOfOrder {
 
 export interface OrderDTO {
   coffee: string;
-  timeOfOrder: Date;
-  typeOfOrder: ETypeOfOrder;
+  time: Date;
+  type: ETypeOfOrder;
 }
 
 export const orderDTOSchema: Joi.ObjectSchema = Joi.object({
   coffee: Joi.string().required(),
-  timeOfOrder: Joi.string().required(),
-  typeOfOrder: Joi.string().valid(...Object.values(ETypeOfOrder)),
+  time: Joi.string().required(),
+  type: Joi.string().valid(...Object.values(ETypeOfOrder)),
 });

@@ -3,11 +3,17 @@ import Joi from 'joi';
 
 export const validateDTO = (schema: Joi.Schema) => {
   return (req: Request, res: Response, next: NextFunction) => {
-    const { error } = schema.validate(req.body);
+    const { body } = req;
 
-    if (error) {
-      next();
-    } else {
+    try {
+      const { error } = schema.validate(body);
+
+      if (!error) {
+        next();
+      } else {
+        res.status(400).json({ error });
+      }
+    } catch (error) {
       res.status(400).json({ error });
     }
   };
