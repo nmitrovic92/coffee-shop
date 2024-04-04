@@ -7,10 +7,6 @@ import { Service } from 'typedi';
 export default class OrderService {
   constructor() {}
 
-  public makeCoffee(): void {
-    console.log('makeCoffee');
-  }
-
   public createOrder(order: OrderDTO): Promise<IOrderDocument> {
     return OrderModel.create(order);
   }

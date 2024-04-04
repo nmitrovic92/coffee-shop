@@ -6,24 +6,26 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc --outDir ./dist -p .",
-    "start": "nodemon -r tsconfig-paths/register src/index.ts"
+    "start": "nodemon -r tsconfig-paths/register src/app.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.11.30",
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
     "joi": "^17.12.2",
     "mongoose": "^8.2.4",
     "reflect-metadata": "^0.2.2",
     "typedi": "^0.10.0",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.3",
+    "path": "^0.12.7"
   },
   "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.30",
     "@types/joi": "^17.2.3",
+    "dotenv": "^16.4.5",
     "nodemon": "^3.1.0",
     "prettier": "^3.2.5",
     "ts-node": "^10.9.2",

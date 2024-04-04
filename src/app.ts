@@ -1,12 +1,14 @@
+import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
+import path from 'path';
 import orderRoutes from './order/routes/index';
+
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 const app = express();
 const PORT = 3000;
-const mongoUri =
-  process.env.MONGO_URI ||
-  'mongodb+srv://nikolamitrovic1313:87zWHBPmrA3nTnYz@cluster0.hyiwiiq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const mongoUri = process.env.MONGO_URI!;
 
 mongoose.connect(mongoUri);
 mongoose.connection.on('error', (error) => console.log(error));
