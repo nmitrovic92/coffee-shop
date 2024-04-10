@@ -10,7 +10,7 @@ const processOrder = async (req: Request, res: Response, next: NextFunction) => 
   try {
     await orderService.createOrder(order);
   } catch (error) {
-    return res.status(422).json({ message: 'Waiting queue is full' });
+    return res.status(422).json({ error });
   }
 
   return res.json({ message: 'Your Coffee is getting ready' });

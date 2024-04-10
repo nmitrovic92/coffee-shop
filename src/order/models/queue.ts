@@ -5,21 +5,18 @@ export interface IOrderQueueDocument extends Document {
   priority: 0 | 1;
 }
 
-const OrderQueueSchema: Schema = new Schema(
-  {
-    orderId: {
-      type: mongoose.Types.ObjectId,
-      required: true,
-      unique: true,
-    },
-    priority: {
-      type: Number,
-      required: true,
-      min: 0,
-      max: 1,
-    },
+const OrderQueueSchema: Schema = new Schema({
+  orderId: {
+    type: mongoose.Types.ObjectId,
+    required: true,
+    unique: true,
   },
-  { _id: false }
-);
+  priority: {
+    type: Number,
+    required: true,
+    min: 0,
+    max: 1,
+  },
+});
 
 export const OrderQueueModel = mongoose.model<IOrderQueueDocument>('queue', OrderQueueSchema);

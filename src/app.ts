@@ -22,6 +22,6 @@ app.use(
 
 app.use('/api/order', orderRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+app.listen(process.env.NODE_PORT || PORT, () => {
+  console.log(`Server listening on port ${process.env.NODE_PORT}`);
 });
